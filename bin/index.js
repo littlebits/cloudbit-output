@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-var debug = require('debug')('output-times')
+var debug = require('debug')('cloudbit-output')
 var program = require('commander')
 
 

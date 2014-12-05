@@ -1,7 +1,15 @@
 {
-  "name": "output-times",
+  "name": "littlebits-cloudbit-output",
   "version": "0.0.0",
-  "description": "CLI utility for sending output to a cloudbit",
+  "description": "CLI utility for sending output to a cloudBit",
+  "keywords": [
+    "cloudbit",
+    "littlebits",
+    "utility",
+    "output",
+    "tool",
+    "cli"
+  ],
   "main": "index.js",
   "bin":  {
     "cloudbit-output": "./bin/index.js",
