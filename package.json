@@ -1,0 +1,17 @@
+{
+  "name": "output-times",
+  "version": "0.0.0",
+  "description": "CLI utility for sending output to a cloudbit",
+  "main": "index.js",
+  "bin":  {
+    "cloudbit-output": "./bin/index.js",
+  },
+  "scripts": {},
+  "author": "Jason Rose-Kuhrt <jasonkuhrt@me.com>",
+  "license": "GPLv3",
+  "dependencies": {
+    "commander": "^2.5.0",
+    "debug": "^2.1.0",
+    "littlebits-cloud-http": "git://github.com/littlebits/cloud-client-api-http"
+  }
+}
