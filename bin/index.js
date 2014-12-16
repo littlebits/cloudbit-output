@@ -17,24 +17,28 @@ program
 
 
 
-var times = program.times || 5
-var duration_ms = program.durationMs || 124
-var interval_ms = program.intervalMs || 1000
-var percent = program.percent || 100
-var device_id = program.deviceId
-var access_token = program.accessToken
+var config = {
+  device_id: program.deviceId,
+  access_token: program.accessToken,
+  times: program.times || 5,
+  duration_ms: program.durationMs || 124,
+  interval_ms: program.intervalMs || 1000,
+  percent: program.percent || 100
+}
 
-if (!device_id) throw new Error('Must provide a deviceId')
-if (!access_token) throw new Error('Must provide an accessToken')
+debug('Launching with configuration:\n\n %s', JSON.stringify(config, null, 2))
 
-var times_left = times
+if (!config.device_id) throw new Error('Must provide a deviceId')
+if (!config.access_token) throw new Error('Must provide an accessToken')
+
+var times_left = config.times
 var output = require('littlebits-cloud-http')
   .output
   .defaults({
-    device_id: device_id,
-    access_token: access_token,
-    duration_ms: duration_ms,
-    percent: percent
+    device_id: config.device_id,
+    access_token: config.access_token,
+    duration_ms: config.duration_ms,
+    percent: config.percent
   })
 
 var loop = setInterval(function() {
@@ -43,11 +47,11 @@ var loop = setInterval(function() {
     debug('DONE')
     return
   }
-  var count = (times - times_left + 1)
+  var count = (config.times - times_left + 1)
   debug('sending output %d', count)
   output(ResponseHandler(count))
   times_left = times_left - 1
-}, interval_ms)
+}, config.interval_ms)
 
 
 
