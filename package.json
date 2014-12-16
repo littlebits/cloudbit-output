@@ -19,7 +19,7 @@
   ],
   "author": "Jason Rose-Kuhrt <jasonkuhrt@me.com>",
   "name": "littlebits-cloudbit-output",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "index.js",
   "description": "CLI utility for sending output to a cloudBit"
 }
